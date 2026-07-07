@@ -1,0 +1,6 @@
+{
+  "name": "SmartTutor AI",
+  "description": "An AI-powered Learning Management System (LMS) with Socratic tutoring, continuous assessment, virtual interactive labs, AI study planners, and custom career pathways.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
