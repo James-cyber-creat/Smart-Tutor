@@ -15,7 +15,7 @@ interface TeacherDashboardProps {
 
 export default function TeacherDashboard({ onAddXp, isAccessibilityMode }: TeacherDashboardProps) {
   // AI Generator state
-  const [topic, setTopic] = useState("Binary Search Trees & Balancing");
+  const [topic, setTopic] = useState("AC Circuits & Resonance Analysis");
   const [materialType, setMaterialType] = useState("Lecture Notes");
   const [audience, setAudience] = useState("Second Year Undergraduates");
   const [isGenerating, setIsGenerating] = useState(false);
@@ -26,19 +26,19 @@ export default function TeacherDashboard({ onAddXp, isAccessibilityMode }: Teach
 
   // Mock Students data
   const [students, setStudents] = useState([
-    { name: "Timothy Drake", progress: 85, predictedGrade: "A", weakSubject: "Graph Cycles", attendance: "96%", testAverage: 92 },
-    { name: "Clara Oswald", progress: 68, predictedGrade: "B+", weakSubject: "AC Resonance", attendance: "91%", testAverage: 81 },
-    { name: "Sarah Jenkins", progress: 92, predictedGrade: "A+", weakSubject: "Linked Structures", attendance: "100%", testAverage: 96 },
-    { name: "Alex Mercer", progress: 42, predictedGrade: "D", weakSubject: "Subnetting Static Routers", attendance: "74%", testAverage: 54 },
-    { name: "Marcus Sterling", progress: 79, predictedGrade: "A-", weakSubject: "Memory Overflows", attendance: "88%", testAverage: 88 }
+    { name: "Timothy Drake", progress: 85, predictedGrade: "A", weakSubject: "Transient RC Analysis", attendance: "96%", testAverage: 92 },
+    { name: "Clara Oswald", progress: 68, predictedGrade: "B+", weakSubject: "AC Phasor Math", attendance: "91%", testAverage: 81 },
+    { name: "Sarah Jenkins", progress: 92, predictedGrade: "A+", weakSubject: "Lenz's Law", attendance: "100%", testAverage: 96 },
+    { name: "Alex Mercer", progress: 42, predictedGrade: "D", weakSubject: "3-Phase Power Impedance", attendance: "74%", testAverage: 54 },
+    { name: "Marcus Sterling", progress: 79, predictedGrade: "A-", weakSubject: "Transformer Flux Coupling", attendance: "88%", testAverage: 88 }
   ]);
 
   // Weak subjects aggregated stats for charts
   const classWeaknessData = [
-    { subject: "Subnets & CIDR", count: 4, averageGrade: 58 },
-    { subject: "Recursion Stack", count: 3, averageGrade: 71 },
-    { subject: "AC Impedance", count: 2, averageGrade: 78 },
-    { subject: "Linked List Trees", count: 1, averageGrade: 89 },
+    { subject: "AC Phasor Math", count: 4, averageGrade: 58 },
+    { subject: "Transient RC Analysis", count: 3, averageGrade: 71 },
+    { subject: "3-Phase Impedance", count: 2, averageGrade: 78 },
+    { subject: "Lenz's Law", count: 1, averageGrade: 89 },
   ];
 
   const COLORS = ["#ef4444", "#3b82f6", "#10b981", "#f59e0b"];
@@ -69,21 +69,21 @@ export default function TeacherDashboard({ onAddXp, isAccessibilityMode }: Teach
 ---
 
 ### Introduction
-This coursework resource covers the fundamental theories, architectural parameters, and conceptual trade-offs when dealing with **${topic}**.
+This coursework resource covers the fundamental theories, mathematical parameters, and circuit principles when dealing with **${topic}**.
 
 ### Core Technical Pillars
-1. **Structure & Foundations:** Decompose variables into separate runtime modules.
-2. **Mathematical / Algorithm Boundary Conditions:** Maintain safe boundaries to prevent stack overflow limits or routing loops.
-3. **Active Reflection:** Challenge the student's current assumptions using socratic prompts.
+1. **Mathematical Models:** Apply Ohm's and Kirchhoff's Laws to calculate branch values.
+2. **AC Phasor Transformations:** Resolve complex impedances into polar and rectangular coordinates.
+3. **Active Lab Reflection:** Challenge student understanding using real-time oscilloscope sweep diagnostics.
 
-### Class Exercise / Practice Task
-Design a complete flow simulation that models these exact parameters under standard network stress conditions.
+### Classroom Exercise / Practical Lab Task
+Formulate a mesh analysis schematic to calculate loop currents under steady-state alternating current parameters.
 
 ---
 ### 🧠 Socratic Study Questions
-1. Why does changing this configuration alter the execution depth of the child nodes?
-2. What happens to current measurements if resistance remains strictly infinite?
-3. Calculate the available subnet pools for this specific gateway mask.
+1. Why does inductive reactance increase while capacitive reactance decreases as source frequency climbs?
+2. What physical factors limit transformer core magnetic efficiency under peak inductive loading?
+3. Calculate the resonance bandwidth and Quality Factor (Q) for this series RLC bandpass circuit.
 
 *(LMS Note: To get direct, generative AI syllabus documents, configure your \`GEMINI_API_KEY\` in Secrets).*`);
         onAddXp(40);

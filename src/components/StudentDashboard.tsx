@@ -48,14 +48,14 @@ export default function StudentDashboard({
   const [chatMessages, setChatMessages] = useState<Array<{role: "user"|"assistant", text: string, files?: string[]}>>([
     { role: "assistant", text: "👋 Hello James! I am your SmartTutor Socratic Mentor. Ready to learn? Ask me to explain a concept, quiz your memory, or let's inspect the uploaded files." }
   ]);
-  const [chatChips, setChatChips] = useState(["Explain Recursion", "Quiz me on Net Routing", "What is Ohm's Law?"]);
+  const [chatChips, setChatChips] = useState(["Explain Ohm's Law", "Quiz me on AC Circuits", "What is Faraday's Law?"]);
   const [isChatLoading, setIsChatLoading] = useState(false);
   const [voiceInputSim, setVoiceInputSim] = useState(false);
   const [ttsActiveId, setTtsActiveId] = useState<number | null>(null);
 
   // Document Upload Mockup
   const [uploadedFiles, setUploadedFiles] = useState<Array<{name: string, size: string, type: string}>>([
-    { name: "Syllabus-DataStructures-CS201.pdf", size: "1.2 MB", type: "PDF" }
+    { name: "Syllabus-ElectricalCircuits-EE101.pdf", size: "1.2 MB", type: "PDF" }
   ]);
   const [dragActive, setDragActive] = useState(false);
 
@@ -67,7 +67,7 @@ export default function StudentDashboard({
   const [labGraderResult, setLabGraderResult] = useState<any | null>(null);
 
   // Continuous Assessment State
-  const [quizTopic, setQuizTopic] = useState("Recursion and Trees");
+  const [quizTopic, setQuizTopic] = useState("AC Circuits & Resonance");
   const [quizDiff, setQuizDiff] = useState<"Easy" | "Medium" | "Hard">("Medium");
   const [quizType, setQuizType] = useState<"MCQ" | "Short Answer" | "Coding">("MCQ");
   const [isQuizGenerating, setIsQuizGenerating] = useState(false);
@@ -75,18 +75,18 @@ export default function StudentDashboard({
   const [quizAnswers, setQuizAnswers] = useState<Record<string, string>>({});
   const [quizFeedback, setQuizFeedback] = useState<any | null>(null);
   const [customEssayInput, setCustomEssayInput] = useState("");
-  const [customEssayQuestion, setCustomEssayQuestion] = useState("Analyze the trade-offs between static and dynamic routing protocols in a core enterprise ISP.");
+  const [customEssayQuestion, setCustomEssayQuestion] = useState("Analyze the trade-offs between series and parallel resonance in RLC bandpass filters.");
 
   // Study Planner State
-  const [weakSubjects, setWeakSubjects] = useState<string[]>(["Network Routing", "Big O Complexity"]);
+  const [weakSubjects, setWeakSubjects] = useState<string[]>(["AC Impedance", "Transient RL Responses"]);
   const [plannerHours, setPlannerHours] = useState(12);
   const [plannerGoal, setPlannerGoal] = useState("University Midterm Exams");
   const [generatedPlan, setGeneratedPlan] = useState<{summary: string, weeklyMilestone: string, timetable: StudyPlanSlot[], diagnosticTips: string[]} | null>(null);
   const [isPlannerLoading, setIsPlannerLoading] = useState(false);
 
   // Career Guidance State
-  const [careerSkills, setCareerSkills] = useState<string[]>(["Python", "Basic Circuit Prototyping", "Subnet Design"]);
-  const [careerInterests, setCareerInterests] = useState<string[]>(["Cyber Security Analyst", "Embedded Software Engineer", "Product Manager"]);
+  const [careerSkills, setCareerSkills] = useState<string[]>(["Circuit Schematics", "Multimeter Diagnostics", "Power Grid Analysis"]);
+  const [careerInterests, setCareerInterests] = useState<string[]>(["Power Systems Engineer", "Embedded Hardware Engineer", "Control Systems Consultant"]);
   const [careerReport, setCareerReport] = useState<CareerPathReport | null>(null);
   const [isCareerLoading, setIsCareerLoading] = useState(false);
 
@@ -94,14 +94,14 @@ export default function StudentDashboard({
   const [forumPosts, setForumPosts] = useState<ForumPost[]>(MOCK_FORUM_POSTS);
   const [newPostTitle, setNewPostTitle] = useState("");
   const [newPostContent, setNewPostContent] = useState("");
-  const [newPostTag, setNewPostTag] = useState("Programming");
+  const [newPostTag, setNewPostTag] = useState("Circuits");
   const [activePostId, setActivePostId] = useState<string | null>("p1");
   const [replyInput, setReplyInput] = useState("");
 
   // Live Class State
   const [liveChatMessages, setLiveChatMessages] = useState<Array<{author: string, text: string}>>([
-    { author: "Dr. Catherine", text: "Welcome everyone! Feel free to sketch on the whiteboard if you want to trace the fib(3) recursive path." },
-    { author: "Clara Oswald", text: "Is the base case always reached first in depth-first order?" }
+    { author: "Dr. Catherine", text: "Welcome everyone! Feel free to sketch on the whiteboard if you want to map out the phasor vectors for our RLC circuit." },
+    { author: "Clara Oswald", text: "Does the current vector lead or lag the voltage vector in a capacitive load?" }
   ]);
   const [liveChatInput, setLiveChatInput] = useState("");
   const [isMuted, setIsMuted] = useState(false);
@@ -162,7 +162,7 @@ export default function StudentDashboard({
   };
 
   const simulateFileUpload = () => {
-    const names = ["Recursion_Handout.pdf", "Ohm_Experimental_Data.xlsx", "CS403_Subnetting_Practice.docx"];
+    const names = ["Kirchhoff_KVL_Handout.pdf", "Ohm_Experimental_Data.xlsx", "EE201_RLC_Resonance_Design.docx"];
     const randomName = names[Math.floor(Math.random() * names.length)];
     const newFile = {
       name: randomName,
@@ -1313,9 +1313,9 @@ export default function StudentDashboard({
                     onChange={(e) => setQuizTopic(e.target.value)}
                     className="w-full bg-slate-50 border rounded-xl p-2 text-xs outline-none focus:border-indigo-500"
                   >
-                    <option value="Recursion & Binary Trees">Recursion & Binary Trees</option>
                     <option value="Ohm's Law & Circuits">Ohm's Law & Circuits</option>
-                    <option value="Subnet Routing & IP Gates">Subnet Routing & IP Gates</option>
+                    <option value="AC Circuits & Resonance">AC Circuits & Resonance</option>
+                    <option value="Power Transformers & Magnetics">Power Transformers & Magnetics</option>
                   </select>
                 </div>
 
